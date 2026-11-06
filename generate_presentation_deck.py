@@ -437,3 +437,4 @@ def build_deck(filename="Bambinos_AI_PM_Operations_Deck.pdf"):
 if __name__ == '__main__':
     deck_filename = sys.argv[1] if len(sys.argv) > 1 else "Bambinos_AI_PM_Operations_Deck.pdf"
     build_deck(deck_filename)
+
