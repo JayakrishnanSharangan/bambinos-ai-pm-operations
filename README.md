@@ -2,9 +2,11 @@
 ## Re-Engineering & Automating the Student Renewal &rarr; Class Scheduling Pipeline
 
 > **Candidate Submission:** AI Program Manager (Operations)  
+> **Candidate GitHub Repo:** [JayakrishnanSharangan/bambinos-ai-pm-operations](https://github.com/JayakrishnanSharangan/bambinos-ai-pm-operations)  
 > **Evaluation Track:** Operations (Stage 2 — Assessment)  
 > **Official Asset Repository:** [bambinoslive/AI-PM-hiring-take-home-assignments](https://github.com/bambinoslive/AI-PM-hiring-take-home-assignments)  
-> **Compulsory Deliverable:** [Bambinos_AI_PM_Operations_Case_Report.pdf](./Bambinos_AI_PM_Operations_Case_Report.pdf) (Executive 4-Page Case Report)
+> **Compulsory Deliverable:** [Bambinos_AI_PM_Operations_Case_Report.pdf](./Bambinos_AI_PM_Operations_Case_Report.pdf) (Executive 4-Page Case Report)  
+> **Live Presentation Deck:** [Bambinos_AI_PM_Operations_Deck.pdf](./Bambinos_AI_PM_Operations_Deck.pdf) (10-Slide Widescreen Presentation)
 
 ---
 
@@ -31,6 +33,7 @@ This repository provides an enterprise-ready **Zero-Touch AI & No-Code Architect
 ```
 bmbinos/
 ├── Bambinos_AI_PM_Operations_Case_Report.pdf   # [COMPULSORY] Publication-grade 4-page Executive PDF Report
+├── Bambinos_AI_PM_Operations_Deck.pdf          # [BONUS] 10-Slide 16:9 Widescreen Executive Presentation Deck
 ├── Bambinos_AI_PM_Ops_Take_Home_Case.pdf        # Original assessment problem statement
 ├── README.md                                    # Master documentation & case review guide
 ├── generate_case_report_pdf.py                  # Script to compile the 4-page ReportLab PDF
