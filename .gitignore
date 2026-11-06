@@ -3,4 +3,5 @@ __pycache__/
 *.pyo
 .DS_Store
 *.log
-
+push_to_github.bat
+generate_*.py
