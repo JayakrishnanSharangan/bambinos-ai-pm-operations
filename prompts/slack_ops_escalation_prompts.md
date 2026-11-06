@@ -63,3 +63,4 @@ _Assigned to: @batch-ops-lead | SLA Target: 30 minutes_
 No class scheduled. Student has a live session coming up in < 24 hours.
 *Immediate Action:* [Claim Ticket] | [Force Schedule Batch {{batch_id}}] | [Call Parent]
 ```
+

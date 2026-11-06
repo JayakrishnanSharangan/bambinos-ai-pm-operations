@@ -100,3 +100,4 @@ We have scheduled 12 live classes starting this week. You can view all upcoming 
 
 📌 Quick Note: Installment 2 (INR {{installment_balance}}) will be scheduled for {{next_due_date}} (prior to Class 12) so {{student_name}} never misses a single lesson.
 ```
+
