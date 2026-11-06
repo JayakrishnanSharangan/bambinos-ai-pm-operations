@@ -1,0 +1,182 @@
+[
+  {
+    "comm_id": "COMM-P-CONF-84901",
+    "recipient_type": "Parent",
+    "recipient_name": "Pr***a Sh***a",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9811XXXX01",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Pr***a Sh***a! \ud83c\udf89 Payment received! Aa***v Sh***a's renewal for YC-G4-Batch-A with Ms. Rhea B*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-03 at 17:00\n\ud83d\udcc5 Schedule: Tue,Thu at 17:00\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68101/calendar\n\nWe're excited to continue Aa***v Sh***a's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84902",
+    "recipient_type": "Parent",
+    "recipient_name": "Ka***k Na***r",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9822XXXX02",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Ka***k Na***r! \ud83c\udf89 Payment received! Di***a Na***r's renewal for BM-G5-Batch-C with Mr. Vikram S*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-02 at 18:00\n\ud83d\udcc5 Schedule: Mon,Wed at 18:00\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68102/calendar\n\nWe're excited to continue Di***a Na***r's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84903",
+    "recipient_type": "Parent",
+    "recipient_name": "Ne***a Ve***a",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9833XXXX03",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Ne***a Ve***a! \ud83c\udf89 Payment received! Ka***r Ve***a's renewal for LY-G3-Batch-B with Acharya Nancy S*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-04 at 16:30\n\ud83d\udcc5 Schedule: Wed,Fri at 16:30\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68103/calendar\n\nWe're excited to continue Ka***r Ve***a's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84904",
+    "recipient_type": "Parent",
+    "recipient_name": "Ri***u Iy***r",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9844XXXX77",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Ri***u Iy***r! \ud83c\udf89 Payment received! An***a Iy***r's renewal for YC-G4-Batch-A with Ms. Rhea B*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-03 at 17:00\n\ud83d\udcc5 Schedule: Tue,Thu at 17:00\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68104/calendar\n\nWe're excited to continue An***a Iy***r's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CAP-84905",
+    "recipient_type": "Parent",
+    "recipient_name": "Me***a Pa***l",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9855XXXX05",
+    "template_type": "BATCH_CAPACITY_SLOT_SWAP",
+    "message": "Hi Me***a Pa***l! \ud83c\udf89 Thank you for renewing Re***h Pa***l's classes at Bambinos.live!\n\nDue to high demand, your current batch (CM-G4-Batch-D) is at full capacity (6/6). We have reserved priority seats for Re***h Pa***l in these identical educator batches:\n1\ufe0f\u20e3 Saturday & Sunday at 04:00 PM\n2\ufe0f\u20e3 Monday & Wednesday at 05:00 PM\n\nPlease reply with '1' or '2' to instantly confirm your preferred slot, or reply 'CALL' for our team to assist!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-OPS-CAP-84905",
+    "recipient_type": "Ops_Team",
+    "recipient_name": "Batch Allocation Desk",
+    "recipient_channel": "Slack (#ops-capacity-alerts)",
+    "target_contact": "#ops-capacity-alerts",
+    "template_type": "OPS_CAPACITY_OVERFLOW_ACTION",
+    "message": "\ud83d\udea8 Capacity Contention Alert: Invoice #84905 for Re***h Pa***l (Student #68105). Batch CM-G4-Batch-D is full (6/6). Parent paid INR 11,000. Options: [1-Click Override Cap to 7] | [Create Split Batch] | [Assign Parallel Cohort].",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-T-NOTIF-84906",
+    "recipient_type": "Educator",
+    "recipient_name": "Ms. Rhea B***",
+    "recipient_channel": "Slack / App",
+    "target_contact": "educator_1102",
+    "template_type": "ZERO_TOUCH_RENEWAL_CONFIRMED",
+    "message": "Good news Ms. Rhea B***! Zo***a Kh***n has renewed for the next term (24 sessions) in your batch YC-GCC-Batch-E. The schedule has been automatically updated in your educator calendar. No form submission required!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84906",
+    "recipient_type": "Parent",
+    "recipient_name": "Fa***n Kh***n",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+971-5012XXX06",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Fa***n Kh***n! \ud83c\udf89 Payment received! Zo***a Kh***n's renewal for YC-GCC-Batch-E with Ms. Rhea B*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-03 at 19:00\n\ud83d\udcc5 Schedule: Sun,Tue at 19:00\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68106/calendar\n\nWe're excited to continue Zo***a Kh***n's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-OPS-DISC-84907",
+    "recipient_type": "Ops_Lead",
+    "recipient_name": "Operations Manager",
+    "recipient_channel": "Slack (#finance-approvals)",
+    "target_contact": "#finance-approvals",
+    "template_type": "DISCOUNT_APPROVAL_CARD",
+    "message": "\u2139\ufe0f Retention Discount Auto-Applied: Invoice #84907 for Vi***n Jo***i. Educator Ms. Simran D*** offered 20% scholarship discount (INR 7,600 paid). Within standard retention allowance. Auto-approved and scheduling initiated.",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84907",
+    "recipient_type": "Parent",
+    "recipient_name": "Po***a Jo***i",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9877XXXX07",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Po***a Jo***i! \ud83c\udf89 Payment received! Vi***n Jo***i's renewal for PH-G1-Batch-F with Ms. Simran D*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-05 at 15:30\n\ud83d\udcc5 Schedule: Mon,Thu at 15:30\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68107/calendar\n\nWe're excited to continue Vi***n Jo***i's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84908",
+    "recipient_type": "Parent",
+    "recipient_name": "Ro***n Ma***a",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+1-40855XXX08",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Ro***n Ma***a! \ud83c\udf89 Payment received! Si***a Ma***a's renewal for LY-US-Batch-G with Acharya Nancy S*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-07 at 09:30\n\ud83d\udcc5 Schedule: Sat,Sun at 09:30\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68108/calendar\n\nWe're excited to continue Si***a Ma***a's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-EMI-84909",
+    "recipient_type": "Parent",
+    "recipient_name": "Sn***a Ku***i",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9899XXXX09",
+    "template_type": "INSTALLMENT_1_CONFIRMATION",
+    "message": "Hi Sn***a Ku***i! \ud83c\udf89 We have received Installment 1 of INR 5,250 for Ad***t Ku***i's classes! We have scheduled 12 upcoming sessions starting this week.\n\nA gentle reminder: Installment 2 (INR 5,250) will be due before class 12 to unlock the second half of the term.\nView schedule here: https://bambinos.live/my-classes/68109",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-T-NOTIF-84910",
+    "recipient_type": "Educator",
+    "recipient_name": "Coach Arvind K***",
+    "recipient_channel": "Slack / App",
+    "target_contact": "educator_1122",
+    "template_type": "ZERO_TOUCH_RENEWAL_CONFIRMED",
+    "message": "Good news Coach Arvind K***! My***a Re***y has renewed for the next term (24 sessions) in your batch CM-G2-Batch-I. The schedule has been automatically updated in your educator calendar. No form submission required!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84910",
+    "recipient_type": "Parent",
+    "recipient_name": "Vi***m Re***y",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9800XXXX10",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Vi***m Re***y! \ud83c\udf89 Payment received! My***a Re***y's renewal for CM-G2-Batch-I with Coach Arvind K*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-04 at 17:00\n\ud83d\udcc5 Schedule: Wed,Fri at 17:00\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68110/calendar\n\nWe're excited to continue My***a Re***y's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-FAIL-84911",
+    "recipient_type": "Parent",
+    "recipient_name": "An***i Gu***a",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9811XXXX11",
+    "template_type": "PAYMENT_FAILED_RETRY",
+    "message": "Hi An***i Gu***a! We noticed your renewal payment of INR 12,000 for Is***n Gu***a's YC-G2-Batch-J did not go through at the bank. \ud83d\udcb3\n\nTo prevent any gap in Is***n Gu***a's scheduled classes, please tap below to securely retry:\n\ud83d\udc49 https://bambinos.live/pay/retry/84911\n\nIf the amount was deducted from your bank, it will auto-reverse within 24-48 hours. Let us know if you need help!",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-T-FAIL-84911",
+    "recipient_type": "Educator",
+    "recipient_name": "Ms. Simran D***",
+    "recipient_channel": "Slack / In-App",
+    "target_contact": "educator_1125",
+    "template_type": "EDUCATOR_PAYMENT_UNPAID_WARNING",
+    "message": "\u26a0\ufe0f Alert: Payment failed for student Is***n Gu***a (Invoice #84911). The parent shared a screenshot, but gateway status is 'Failed'. Class scheduling is held. Please do not admit student to the next term batch until payment clears.",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CHANGE-84912",
+    "recipient_type": "Parent",
+    "recipient_name": "De***k Me***n",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9822XXXX12",
+    "template_type": "SCHEDULE_CHANGE_SELECTION",
+    "message": "Hi De***k Me***n! We received your request to move Ta***a Me***n's classes to Sat,Sun at 11:00:00. \ud83d\udcc5\n\nHere are the confirmed open batches matching your preference with Acharya Nancy S***:\n\ud83d\udc49 [Option A] Sat, Sun 11:00 AM (2 seats left)\n\ud83d\udc49 [Option B] Sat, Sun 04:00 PM (3 seats left)\n\nTap to select your batch directly: https://bambinos.live/schedule/select/84912?pref=weekend",
+    "created_at": "2026-11-06 21:29:58"
+  },
+  {
+    "comm_id": "COMM-P-CONF-84913",
+    "recipient_type": "Parent",
+    "recipient_name": "Ar***n \u041c\u0435***a",
+    "recipient_channel": "WhatsApp",
+    "target_contact": "+91-9833XXXX13",
+    "template_type": "ZERO_TOUCH_SCHEDULE_CONFIRMED",
+    "message": "Hi Ar***n \u041c\u0435***a! \ud83c\udf89 Payment received! De***a Me***a's renewal for SC-G4-Batch-K with Ms. Mary M*** is officially confirmed!\n\n\ud83d\uddd3\ufe0f Next Class: 2026-11-05 at 18:00\n\ud83d\udcc5 Schedule: Tue,Thu at 18:00\n\ud83d\udd22 Total Sessions Booked: 24\n\nTap to view the full calendar or sync with Google Calendar:\n\ud83d\udc49 https://bambinos.live/portal/student/68113/calendar\n\nWe're excited to continue De***a Me***a's learning journey!",
+    "created_at": "2026-11-06 21:29:58"
+  }
+]

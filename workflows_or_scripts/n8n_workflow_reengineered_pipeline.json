@@ -1,0 +1,270 @@
+{
+  "name": "Bambinos.live - Zero-Touch Student Renewal & Class Scheduling Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhook/payment-gateway-event",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "node-1-webhook",
+      "name": "Payment Gateway Webhook (Razorpay/Stripe)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT s.*, b.classbatch_name, b.batch_days, b.batch_start_time, b.active_students_count, b.max_batch_size, e.educator_name FROM active_students s JOIN classbatches b ON s.current_classbatch_id = b.id JOIN educators e ON b.educator_id = e.id WHERE s.student_id = $1;",
+        "queryParams": "={{ $json.body.payload.payment.entity.notes.student_id }}"
+      },
+      "id": "node-2-db-lookup",
+      "name": "Lookup Student & Batch Reference Data",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [320, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body.event }}",
+              "value2": "payment.captured"
+            }
+          ]
+        }
+      },
+      "id": "node-3-check-payment-status",
+      "name": "Is Payment Captured?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [540, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.body.payload.payment.entity.notes.continue_same_batch !== 'No' }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "node-4-check-batch-intent",
+      "name": "Continue Same Batch?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [760, 240]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.active_students_count }}",
+              "operation": "smaller",
+              "value2": "={{ $json.max_batch_size }}"
+            }
+          ]
+        }
+      },
+      "id": "node-5-check-capacity",
+      "name": "Batch Has Open Capacity?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [980, 180]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO class_schedule_bookings (bookingrequest_id, invoice_id, classbatch_id, class_id, user_id, student_id, educator_id, class_date, start_time, end_time, booking_type, is_cancelled) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 'Renewal', 'No');"
+      },
+      "id": "node-6-insert-schedules",
+      "name": "Zero-Touch Auto-Provision 24 Sessions",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1220, 120]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "https://api.whatsapp.com/v1/messages",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{ $json.mobile }}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"zero_touch_renewal_confirmation\",\n    \"language\": {\"code\": \"en\"}\n  }\n}"
+      },
+      "id": "node-7-whatsapp-parent-success",
+      "name": "WhatsApp Parent: Renewal Confirmed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1460, 120]
+    },
+    {
+      "parameters": {
+        "channel": "#ops-capacity-alerts",
+        "text": "=🚨 Batch Capacity Full for Student {{ $json.student_id }} in batch {{ $json.classbatch_name }}. Triggering parallel slot offer to parent."
+      },
+      "id": "node-8-capacity-full-alert",
+      "name": "Slack Alert: Capacity Saturation",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [1220, 280]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "https://api.whatsapp.com/v1/messages",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{ $json.mobile }}\",\n  \"type\": \"interactive\",\n  \"interactive\": {\n    \"type\": \"button\",\n    \"body\": {\"text\": \"Your batch is full. Choose an alternative slot:\"}\n  }\n}"
+      },
+      "id": "node-9-whatsapp-slot-swap",
+      "name": "WhatsApp Parent: Interactive Slot Swap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1460, 280]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "https://api.whatsapp.com/v1/messages",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{ $json.mobile }}\",\n  \"type\": \"interactive\",\n  \"interactive\": {\n    \"type\": \"list\",\n    \"body\": {\"text\": \"Pick your new schedule day and time:\"}\n  }\n}"
+      },
+      "id": "node-10-whatsapp-schedule-change",
+      "name": "WhatsApp Parent: Self-Serve Batch Picker",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1220, 420]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "https://api.whatsapp.com/v1/messages",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{ $json.mobile }}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"payment_failed_retry_link\"\n  }\n}"
+      },
+      "id": "node-11-whatsapp-payment-failed",
+      "name": "WhatsApp Parent: Payment Failed Retry Link",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [760, 520]
+    },
+    {
+      "parameters": {
+        "channel": "#ops-failed-payments",
+        "text": "=⚠️ Payment Failed at Gateway for Student {{ $json.student_id }}. Holds applied to scheduling."
+      },
+      "id": "node-12-slack-failed-payment",
+      "name": "Slack Alert: Payment Failure",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [980, 520]
+    }
+  ],
+  "connections": {
+    "Payment Gateway Webhook (Razorpay/Stripe)": {
+      "main": [
+        [
+          {
+            "node": "Lookup Student & Batch Reference Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup Student & Batch Reference Data": {
+      "main": [
+        [
+          {
+            "node": "Is Payment Captured?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Payment Captured?": {
+      "main": [
+        [
+          {
+            "node": "Continue Same Batch?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Parent: Payment Failed Retry Link",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Slack Alert: Payment Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Continue Same Batch?": {
+      "main": [
+        [
+          {
+            "node": "Batch Has Open Capacity?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Parent: Self-Serve Batch Picker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Batch Has Open Capacity?": {
+      "main": [
+        [
+          {
+            "node": "Zero-Touch Auto-Provision 24 Sessions",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack Alert: Capacity Saturation",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WhatsApp Parent: Interactive Slot Swap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zero-Touch Auto-Provision 24 Sessions": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Parent: Renewal Confirmed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

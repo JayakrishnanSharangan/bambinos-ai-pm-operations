@@ -1,0 +1,18 @@
+{
+  "total_invoices": 13,
+  "total_faculty_forms": 12,
+  "auto_approved_count": 10,
+  "exceptions_flagged_count": 4,
+  "orphaned_invoices_detected": 2,
+  "healed_typos_count": 1,
+  "deduplicated_forms_count": 1,
+  "capacity_blocked_count": 1,
+  "failed_payments_blocked": 1,
+  "batch_changes_triaged": 1,
+  "partial_payments_handled": 1,
+  "auto_approved_unique_students": 10,
+  "total_sessions_scheduled": 228,
+  "total_communications_drafted": 18,
+  "open_exceptions_requiring_human_ops": 3,
+  "auto_resolved_exceptions": 7
+}
